@@ -20,5 +20,5 @@ jobs:
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: ./
-          local-dir: ./public
+          local-dir: ./public/
           exclude: ignore
