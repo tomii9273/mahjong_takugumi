@@ -53,6 +53,7 @@
         <li><a href="#long_game">長期戦用（全員と3回ずつ同卓）</a></li>
       </ul>
       <li><a href="#3ma">3人麻雀用</a></li>
+      <li><a href="#1vs1">1 対 1 のゲーム用</a></li>
       <li><a href="#code">Python コード</a></li>
     </ul>
 
@@ -407,6 +408,26 @@
         <a href="3ma/25taku_75nin_37sen.txt">25卓75人37戦</a><br />
       </dt>
     </dl>
+
+    <br />
+    <h2 id="1vs1">1 対 1 のゲーム用</h2>
+
+    <p>
+      1 対 1 で行うゲームやスポーツでは、以下のリンク先の方法で簡単に総当たり戦を組むことができます。<br />
+      <a href="https://www.ne.jp/asahi/office/okada/soft/souatari/help/help.html">https://www.ne.jp/asahi/office/okada/soft/souatari/help/help.html</a
+      ><br />
+      人数 (チーム数) が<b>偶数</b>の場合は<b>「n 人が同時並行で n / 2 戦を行うこと」を n-1 回行う</b>ことになります。<br />
+      <b>奇数</b>の場合は、1 多い偶数で総当たり戦を作成した後、選手番号 1 番を削除し、1 番と対戦する人を抜け番とする方法をとることで<br />
+      <b>「n - 1 人が同時並行で (n - 1) / 2 戦を行うこと」を n 回行う</b>ことになります (画像は 7 人の例です)。
+    </p>
+
+    <img src="images/1vs1_00.png" alt="1 対 1 での 7 人総当たり戦の例" width="40%" height="40%" />
+
+    <p>
+      <a href="souatari_sen_method.html">麻雀総当たり戦の卓組作成方法</a>
+      に記載した「円と点を使った方法」でも、以下のリンク先のようにして総当たり戦を組むことができます。<br />
+      <a href="https://salon-hiyake.hatenablog.com/entry/2014/08/14/091103">https://salon-hiyake.hatenablog.com/entry/2014/08/14/091103</a>
+    </p>
 
     <br />
     <h2 id="code">Python コード</h2>
