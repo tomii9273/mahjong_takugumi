@@ -5,6 +5,6 @@ https://tomii6614.web.fc2.com/
 
 ## 関連リンク
 
-- FC2 ホームページの管理画面: https://web.fc2.com/manager/
 - 作成者 X (Twitter): https://twitter.com/Tomii9273
 - FTP へのデプロイを GitHub Actions で行うプログラム: https://github.com/SamKirkland/FTP-Deploy-Action
+- FC2 ホームページの管理画面 (自分用): https://web.fc2.com/manager/
