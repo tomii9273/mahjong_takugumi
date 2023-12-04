@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -33,7 +33,7 @@
     <br />
     <h2 id="mokuji">目次</h2>
     <ul>
-      <li>4人麻雀用</li>
+      <li><a href="#4nin_game">4人麻雀用</a></li>
       <ul>
         <li><a href="#kojin_sen">個人戦・4人チーム戦用</a></li>
         <li><a href="#4team_sen">4チーム戦用</a></li>
@@ -45,12 +45,16 @@
         <li><a href="#shouninzuu">少人数用（14人以下）</a></li>
         <li><a href="#long_game">長期戦用（全員と3回ずつ同卓）</a></li>
       </ul>
-      <li><a href="#3ma">3人麻雀用</a></li>
+      <li><a href="#3nin_game">3人麻雀用</a></li>
+      <ul>
+        <li><a href="#3g_kojin_sen">個人戦・3人チーム戦用</a></li>
+      </ul>
       <li><a href="#1vs1">1 対 1 のゲーム用</a></li>
       <li><a href="#method_and_src">作成方法ページ・ソースコードの一覧</a></li>
     </ul>
 
     <br />
+    <h1 id="4nin_game">4人麻雀用</h1>
     <h2 id="kojin_sen">個人戦・4人チーム戦用</h2>
     <ul>
       <li>一般的な個人戦用の卓組です。全員ができるだけ多くの選手と同卓できます（同じ2人が複数回同卓することはありません）。</li>
@@ -461,13 +465,16 @@
     </dl>
 
     <br />
-    <h2 id="3ma">3人麻雀用</h2>
+    <h1 id="3nin_game">3人麻雀用</h1>
+    <p>3人麻雀 (サンマ) 用の卓組です。もちろん、麻雀以外の3人で行うゲームの組分けとしても使用できます。</p>
+    <h2 id="3g_kojin_sen">個人戦・3人チーム戦用</h2>
     <ul>
-      <li>3人麻雀用の、(2n+1)卓(6n+3)人(3n+1)回戦の総当たり戦の卓組です。</li>
-      <li>もちろん、麻雀以外の3人で行うゲームの組分けとしても使用できます。</li>
-      <li>全戦を行うと参加者全員とちょうど1回ずつ同卓することができます。</li>
+      <li>一般的な個人戦用の卓組です。全員ができるだけ多くの選手と同卓できます（同じ2人が複数回同卓することはありません）。</li>
+      <li>第1戦の卓をチームとみなし、実際の対局は第2戦から始めることで、3人×(卓数)チームによるチーム戦を行えます。</li>
+      <li>座位（東南西）を平等にした卓組を作りたい場合はこの下の「3チーム戦用」のものが有用です。</li>
       <li>
-        総当たりをするほどたくさんの対局を行わない場合でも、前半の数回戦分を抜き出すことで、全員ができるだけ多くの人と同卓できる卓組として使用できます。
+        *印の付いているものは<b>総当たり戦</b> ((2n+1)卓(6n+3)人(3n+1)回戦)
+        の卓組です。全戦を行うと参加者全員とちょうど1回ずつ同卓することができます。
       </li>
       <li><a href="3ma_method.html">卓組の作成方法はこちら</a></li>
     </ul>
@@ -475,18 +482,18 @@
     <dl>
       <dt>
         <br />
-        <a href="3ma/3taku_9nin_4sen.txt">3卓9人4戦</a><br />
-        <a href="3ma/5taku_15nin_7sen.txt">5卓15人7戦</a><br />
+        <a href="3ma/3taku_9nin_4sen.txt">3卓9人4戦*</a><br />
+        <a href="3ma/5taku_15nin_7sen.txt">5卓15人7戦*</a><br />
         7卓21人10戦<br />
-        <a href="3ma/9taku_27nin_13sen.txt">9卓27人13戦</a><br />
-        <a href="3ma/11taku_33nin_16sen.txt">11卓33人16戦</a><br />
-        <a href="3ma/13taku_39nin_19sen.txt">13卓39人19戦</a><br />
+        <a href="3ma/9taku_27nin_13sen.txt">9卓27人13戦*</a><br />
+        <a href="3ma/11taku_33nin_16sen.txt">11卓33人16戦*</a><br />
+        <a href="3ma/13taku_39nin_19sen.txt">13卓39人19戦*</a><br />
         15卓45人22戦<br />
-        <a href="3ma/17taku_51nin_25sen.txt">17卓51人25戦</a><br />
-        <a href="3ma/19taku_57nin_28sen.txt">19卓57人28戦</a><br />
+        <a href="3ma/17taku_51nin_25sen.txt">17卓51人25戦*</a><br />
+        <a href="3ma/19taku_57nin_28sen.txt">19卓57人28戦*</a><br />
         21卓63人31戦<br />
         23卓69人34戦<br />
-        <a href="3ma/25taku_75nin_37sen.txt">25卓75人37戦</a><br />
+        <a href="3ma/25taku_75nin_37sen.txt">25卓75人37戦*</a><br />
       </dt>
     </dl>
 
@@ -517,72 +524,84 @@
 
     <table border="1">
       <tr align="left">
+        <th>人数</th>
         <th>種類</th>
         <th>卓組</th>
         <th>作成方法</th>
         <th>コード</th>
       </tr>
       <tr align="left">
+        <td>4</td>
         <td>個人戦・4人チーム戦用</td>
         <td><a href="#kojin_sen">■</a></td>
         <td><a href="kojin_sen_method.html">■</a></td>
         <td></td>
       </tr>
       <tr align="left">
+        <td>4</td>
         <td>4チーム戦用</td>
         <td><a href="#4team_sen">■</a></td>
         <td><a href="4team_sen_method.html">■</a></td>
         <td></td>
       </tr>
       <tr align="left">
+        <td>4</td>
         <td>ペア戦（2人チーム戦）用</td>
         <td><a href="#pair_sen">■</a></td>
         <td></td>
         <td></td>
       </tr>
       <tr align="left">
+        <td>4</td>
         <td>トリオ戦（3人チーム戦）用</td>
         <td><a href="#trio_sen">■</a></td>
         <td></td>
         <td></td>
       </tr>
       <tr align="left">
+        <td>4</td>
         <td>総当たり戦用</td>
         <td><a href="#souatari_sen">■</a></td>
         <td><a href="souatari_sen_method.html">■</a></td>
         <td><a href="https://github.com/tomii9273/takugumi_code/blob/master/souatarisen.py">■</a></td>
       </tr>
       <tr align="left">
+        <td>4</td>
         <td>抜け番あり（人数が4の倍数でない場合）1人4戦 合計5戦</td>
         <td><a href="#nukeari_4and1_sen">■</a></td>
         <td><a href="nukeari_4and1_sen_method.html">■</a></td>
         <td></td>
       </tr>
       <tr align="left">
+        <td>4</td>
         <td>抜け番あり（人数が4の倍数でない場合）1人8戦 合計9戦</td>
         <td><a href="#nukeari_8and1_sen">■</a></td>
         <td><a href="nukeari_8and1_sen_method.html">■</a></td>
         <td></td>
       </tr>
       <tr align="left">
+        <td>4</td>
         <td>少人数用（14人以下）</td>
         <td><a href="#shouninzuu">■</a></td>
         <td></td>
         <td></td>
       </tr>
       <tr align="left">
+        <td>4</td>
         <td>長期戦用（全員と3回ずつ同卓）</td>
         <td><a href="#long_game">■</a></td>
         <td></td>
         <td></td>
       </tr>
       <tr align="left">
-        <td>3人麻雀用</td>
-        <td><a href="#3ma">■</a></td>
+        <td>3</td>
+        <td>個人戦・3人チーム戦用</td>
+        <td><a href="#3g_kojin_sen">■</a></td>
         <td><a href="3ma_method.html">■</a></td>
         <td></td>
       </tr>
       <tr align="left">
+        <td>2</td>
         <td>1 対 1 のゲーム用</td>
         <td>-</td>
         <td><a href="#1vs1">■</a></td>
