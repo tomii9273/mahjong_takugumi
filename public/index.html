@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -551,6 +551,25 @@
       に記載した「円と点を使った方法」でも、以下のリンク先のようにして総当たり戦を組むことができます。<br />
       <a href="https://salon-hiyake.hatenablog.com/entry/2014/08/14/091103">https://salon-hiyake.hatenablog.com/entry/2014/08/14/091103</a>
     </p>
+
+    <br />
+    <h1 id="5_and_more_game">5 人以上で対戦するゲーム用</h1>
+
+    <p>
+      n 人で対戦するゲームについ5_and_more_gameて、<b>n が素数の場合には n 卓 n^2 人 n+1 戦の総当たり戦を組めます</b>。<br />
+      <a href="http://math.a.la9.jp/aleague4.htm">http://math.a.la9.jp/aleague4.htm</a><br />
+      上記リンク先の下から 2 番目の解答 (カラフルな図があるもの) の方法で可能です。卓組表を作成するエクセルもあります。<br />
+      ただし、(リンク先には書かれていませんが) この方法では n が素数でない場合には総当たり戦にならず、重複や未対戦が生じます。<br />
+      <br />
+      この方法を一般化して記述してみました。<br />
+      (各種番号を 1 番ではなく 0 番から振っていることに注意してください。)
+    </p>
+    <ol>
+      <li>選手に 0 ～ n^2 - 1 の番号を振る。</li>
+      <li>整数 p を n で割った商を a(p)、余りを b(p) とする。</li>
+      <li>0 ～ n-1 戦目では、選手 p の s 戦目の卓番号を「a(p) × s + b(p) を n で割った余り」とする。</li>
+      <li>n 戦目 (最終戦) では、選手 p の卓番号を a(p) とする。</li>
+    </ol>
 
     <br />
     <h2 id="method_and_src">作成方法ページ・ソースコードの一覧</h2>
