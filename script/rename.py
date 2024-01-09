@@ -6,11 +6,11 @@ import os
 import re
 import sys
 
-DIR_BEFORE = "nuke8"
-DIR_AFTER = "nukeari_8and1_sen"
+# DIR_BEFORE = "nuke8"
+# DIR_AFTER = "nukeari_8and1_sen"
 # SUFFIX_AFTER = "souatari"
 
-os.makedirs(DIR_AFTER, exist_ok=True)
+# os.makedirs(DIR_AFTER, exist_ok=True)
 
 
 def rewrite_line(line):
@@ -22,7 +22,9 @@ def rewrite_line(line):
     # match = re.match(
     #     rf'        <a href="{DIR_BEFORE}/(\d+)taku(\d+)nin8and1sen\.txt">(\d+)卓(\d+)人</a><br />\n', line
     # )  # 抜け番あり
-    match = re.match(rf'        <a href="3ma/(\d+)sou3ma\.txt">(\d+)卓(\d+)人(\d+)戦</a><br />\n', line)  # サンマ
+    # match = re.match(rf'        <a href="3ma/(\d+)sou3ma\.txt">(\d+)卓(\d+)人(\d+)戦</a><br />\n', line)  # サンマ
+
+    match = re.match(r'.*(\d+)卓(\d+)人(\d+)戦.*', line)  # 半角スペース追加
 
     if match:
         print(match.groups())
@@ -30,7 +32,8 @@ def rewrite_line(line):
         # num1, num2, num3, num4, num5 = match.groups()  # ペア戦など
         # num1, num2, num3, num4 = match.groups()  # 抜け番あり
         # assert num1 == num3 and num2 == num4  # 抜け番あり
-        num1, num2, num3, num4 = match.groups()  # サンマ
+        # num1, num2, num3, num4 = match.groups()  # サンマ
+        num1, num2, num3 = match.groups()  # 半角スペース追加
 
         # if int(num1) >= 14:
         #     return line
@@ -52,9 +55,16 @@ def rewrite_line(line):
         # os.rename(f"{DIR_BEFORE}/{num1}taku{num2}nin8and1sen.txt", path_after)
 
         # サンマ
-        path_after = f"3ma/{num2}taku_{num3}nin_{num4}sen.txt"
-        new_format = f'        <a href="{path_after}">{num2}卓{num3}人{num4}戦</a><br />\n'
-        os.rename(f"3ma/{num1}sou3ma.txt", path_after)
+        # path_after = f"3ma/{num2}taku_{num3}nin_{num4}sen.txt"
+        # new_format = f'        <a href="{path_after}">{num2}卓{num3}人{num4}戦</a><br />\n'
+        # os.rename(f"3ma/{num1}sou3ma.txt", path_after)
+
+        # 半角スペース追加
+        target = f'{num1}卓{num2}人{num3}戦'
+        new_format = f'{num1} 卓 {num2} 人 {num3} 戦'
+        target_index = line.find(target)
+        new_format = line[:target_index] + new_format + line[target_index + len(target):]
+        # print(new_format)
 
         # sys.exit()
         return new_format
@@ -66,7 +76,7 @@ def rewrite_line(line):
 # line = '<a href="k/4k.txt">4卓16人5戦</a><br />'
 # print(rewrite_line(line))
 
-html_name = "index.html"
+html_name = "../public/index.html"
 
 # 元のHTMLファイルを読み込む
 with open(html_name, "r", encoding="utf-8") as f:
