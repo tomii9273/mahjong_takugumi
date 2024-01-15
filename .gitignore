@@ -1,4 +1,5 @@
 ignore
+.venv
 
 # Logs
 logs
