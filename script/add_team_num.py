@@ -1,6 +1,6 @@
 # 全卓組 (html) を確認し、チーム戦・ペア戦・トリオ戦にチーム番号の列を追加
 # 選手番号の列は「選手n」から「n」に変更
-# https://github.com/tomii9273/mahjong_takugumi/pull/41
+# https://github.com/tomii9273/mahjong_takugumi/pull/47
 
 import os
 
