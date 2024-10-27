@@ -1,0 +1,5 @@
+@charset "UTF-8";
+
+table td {
+  padding: 2px 2px; /*上下・左右の順*/
+}
