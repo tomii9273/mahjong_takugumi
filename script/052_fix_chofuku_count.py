@@ -151,7 +151,10 @@ def fix_chohuku_count(file_path):
 
 
 root_path = "..\\public\\guest"
+# root_path = "..\\public\\kojin_d"
+
 target_path = [os.path.join(root_path, f) for f in os.listdir(root_path)]  # 卓組 html ファイルのパス
 
 for file_path in target_path:
-    fix_chohuku_count(file_path)
+    if file_path.endswith(".html"):
+        fix_chohuku_count(file_path)
