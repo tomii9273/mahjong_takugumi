@@ -3,3 +3,6 @@
 table td {
   padding: 2px 2px; /*上下・左右の順*/
 }
+table th {
+  padding: 2px 2px; /*上下・左右の順*/
+}
