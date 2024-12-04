@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta
+      name="keyword"
+      content="麻雀, 麻将, 大会, 卓組, 組合せ, 組み合わせ, 総当たり, 個人戦, Social_Golfer_Problem, SGP, ソーシャルゴルファー問題, Kirkman's_Schoolgirl_Problem"
+    />
+    <title>Social Golfer Problem の解 - 麻雀大会用卓組表</title>
+    <link rel="stylesheet" href="social_golfer_problem.css" type="text/css" />
+  </head>
+  <body bgcolor="#e0ffe0">
+    <h1>Social Golfer Problem の解</h1>
+
+    <p>
+      当サイトに掲載している一部の卓組は、離散数学における組合せ設計問題である
+      <a href="https://en.wikipedia.org/wiki/Social_golfer_problem">Social Golfer Problem</a> (SGP) の解になっています。<br />
+      SGP の概要:「p 人のゴルファーが s 人ずつのグループに分かれて週に 1 回ゴルフをする。同じグループで 2
+      人のゴルファーが複数回一緒にプレーすることなく w 週プレーするスケジュール設定は可能か？」<br />
+      問題の解と卓組の対応をこのページにまとめました。
+    </p>
+
+    <table border="1" style="border-collapse: collapse">
+      <tr align="left">
+        <th>変数の文字</th>
+        <th>SGP での呼称</th>
+        <th>麻雀の卓組での呼称</th>
+      </tr>
+      <tr align="left">
+        <td>g</td>
+        <td>グループ数</td>
+        <td>卓数</td>
+      </tr>
+      <tr align="left">
+        <td>p</td>
+        <td>1 グループのプレイヤー (ゴルファー) 人数</td>
+        <td>p 人麻雀</td>
+      </tr>
+      <tr align="left">
+        <td>w</td>
+        <td>週数</td>
+        <td>対戦数</td>
+      </tr>
+    </table>
+
+    <p>
+      g, p が決まっている場合、w の最大値は (gp-1) / (p-1) を超えないことが示せます。その中で最大の w を達成している場合「w最大」欄に ○
+      をつけています。
+      <details>
+        <summary>証明</summary>
+        <p>
+          ある選手の立場で考える。この選手が 1 対戦で同卓できる選手数は p-1 人である。<br />
+          その枠に 1 戦ずつ本人以外の選手 (合計 gp-1 人) を割り当てていくと、(gp-1) / (p-1) 戦を超えた段階で選手が足りなくなる。<br />
+          よって、対戦数 w の最大値は (gp-1) / (p-1) を超えない。
+        </p>
+      </details>
+    </p>
+
+    <h2>p = 3</h2>
+
+    <table border="1" style="border-collapse: collapse">
+      <tr align="left">
+        <th>g</th>
+        <th>p</th>
+        <th>w</th>
+        <th>w最大</th>
+        <th>卓組リンク</th>
+        <th>作成方法リンク</th>
+      </tr>
+      <tr align="left">
+        <td>3</td>
+        <td>3</td>
+        <td>4</td>
+        <td>○</td>
+        <td><a href="3g_kojin_sen/3taku_9nin_4sen_kojin.html">3 卓 9 人 4 戦</a></td>
+        <td><a href="3g_kojin_sen_method.html">3 人麻雀 個人戦 重複同卓なし 卓組作成方法</a></td>
+      </tr>
+      <tr align="left">
+        <td>4</td>
+        <td>3</td>
+        <td>4</td>
+        <td></td>
+        <td><a href="3g_kojin_sen/4taku_12nin_4sen_kojin.html">4 卓 12 人 4 戦</a></td>
+        <td><a href="3g_kojin_sen_method.html">3 人麻雀 個人戦 重複同卓なし 卓組作成方法</a></td>
+      </tr>
+      <tr align="left">
+        <td>5</td>
+        <td>3</td>
+        <td>7</td>
+        <td>○</td>
+        <td><a href="3g_kojin_sen/5taku_15nin_7sen_kojin.html">5 卓 15 人 7 戦</a></td>
+        <td><a href="3g_kojin_sen_method.html">3 人麻雀 個人戦 重複同卓なし 卓組作成方法</a></td>
+      </tr>
+      <tr align="left">
+        <td>6</td>
+        <td>3</td>
+        <td>8</td>
+        <td>○</td>
+        <td><a href="3g_kojin_sen/6taku_18nin_8sen_kojin.html">6 卓 18 人 8 戦</a></td>
+        <td><a href="3g_kojin_sen_method.html">3 人麻雀 個人戦 重複同卓なし 卓組作成方法</a></td>
+      </tr>
+      <tr align="left">
+        <td>7</td>
+        <td>3</td>
+        <td>9</td>
+        <td></td>
+        <td><a href="3g_kojin_sen/7taku_21nin_9sen_kojin.html">7 卓 21 人 9 戦</a></td>
+        <td><a href="3g_kojin_sen_method.html">3 人麻雀 個人戦 重複同卓なし 卓組作成方法</a></td>
+      </tr>
+      <tr align="left">
+        <td>8</td>
+        <td>3</td>
+        <td>11</td>
+        <td>○</td>
+        <td><a href="3g_kojin_sen/8taku_24nin_11sen_kojin.html">8 卓 24 人 11 戦</a></td>
+        <td><a href="3g_kojin_sen_method.html">3 人麻雀 個人戦 重複同卓なし 卓組作成方法</a></td>
+      </tr>
+      <tr align="left">
+        <td>9</td>
+        <td>3</td>
+        <td>13</td>
+        <td>○</td>
+        <td><a href="3g_kojin_sen/9taku_27nin_13sen_kojin.html">9 卓 27 人 13 戦</a></td>
+        <td><a href="3g_kojin_sen_method.html">3 人麻雀 個人戦 重複同卓なし 卓組作成方法</a></td>
+      </tr>
+      <tr align="left">
+        <td>10</td>
+        <td>3</td>
+        <td>13</td>
+        <td></td>
+        <td><a href="3g_kojin_sen/10taku_30nin_13sen_kojin.html">10 卓 30 人 13 戦</a></td>
+        <td><a href="3g_kojin_sen_method.html">3 人麻雀 個人戦 重複同卓なし 卓組作成方法</a></td>
+      </tr>
+      <tr align="left">
+        <td>11</td>
+        <td>3</td>
+        <td>16</td>
+        <td>○</td>
+        <td><a href="3g_kojin_sen/11taku_33nin_16sen_kojin.html">11 卓 33 人 16 戦</a></td>
+        <td><a href="3g_kojin_sen_method.html">3 人麻雀 個人戦 重複同卓なし 卓組作成方法</a></td>
+      </tr>
+      <tr align="left">
+        <td>12</td>
+        <td>3</td>
+        <td>16</td>
+        <td></td>
+        <td><a href="3g_kojin_sen/12taku_36nin_16sen_kojin.html">12 卓 36 人 16 戦</a></td>
+        <td><a href="3g_kojin_sen_method.html">3 人麻雀 個人戦 重複同卓なし 卓組作成方法</a></td>
+      </tr>
+      <tr align="left">
+        <td>13</td>
+        <td>3</td>
+        <td>19</td>
+        <td>○</td>
+        <td><a href="3g_kojin_sen/13taku_39nin_19sen_kojin.html">13 卓 39 人 19 戦</a></td>
+        <td><a href="3g_kojin_sen_method.html">3 人麻雀 個人戦 重複同卓なし 卓組作成方法</a></td>
+      </tr>
+      <tr align="left">
+        <td>14</td>
+        <td>3</td>
+        <td>20</td>
+        <td>○</td>
+        <td><a href="3g_kojin_sen/14taku_42nin_20sen_kojin.html">14 卓 42 人 20 戦</a></td>
+        <td><a href="3g_kojin_sen_method.html">3 人麻雀 個人戦 重複同卓なし 卓組作成方法</a></td>
+      </tr>
+      <tr align="left">
+        <td>15</td>
+        <td>3</td>
+        <td>22</td>
+        <td>○</td>
+        <td><a href="3g_kojin_sen/15taku_45nin_22sen_kojin.html">15 卓 45 人 22 戦</a></td>
+        <td><a href="3g_kojin_sen_method.html">3 人麻雀 個人戦 重複同卓なし 卓組作成方法</a></td>
+      </tr>
+      <tr align="left">
+        <td>16</td>
+        <td>3</td>
+        <td>23</td>
+        <td>○</td>
+        <td><a href="3g_kojin_sen/16taku_48nin_23sen_kojin.html">16 卓 48 人 23 戦</a></td>
+        <td><a href="3g_kojin_sen_method.html">3 人麻雀 個人戦 重複同卓なし 卓組作成方法</a></td>
+      </tr>
+      <tr align="left">
+        <td>17</td>
+        <td>3</td>
+        <td>25</td>
+        <td>○</td>
+        <td><a href="3g_kojin_sen/17taku_51nin_25sen_kojin.html">17 卓 51 人 25 戦</a></td>
+        <td><a href="3g_kojin_sen_method.html">3 人麻雀 個人戦 重複同卓なし 卓組作成方法</a></td>
+      </tr>
+      <tr align="left">
+        <td>18</td>
+        <td>3</td>
+        <td>25</td>
+        <td></td>
+        <td><a href="3g_kojin_sen/18taku_54nin_25sen_kojin.html">18 卓 54 人 25 戦</a></td>
+        <td><a href="3g_kojin_sen_method.html">3 人麻雀 個人戦 重複同卓なし 卓組作成方法</a></td>
+      </tr>
+      <tr align="left">
+        <td>19</td>
+        <td>3</td>
+        <td>28</td>
+        <td>○</td>
+        <td><a href="3g_kojin_sen/19taku_57nin_28sen_kojin.html">19 卓 57 人 28 戦</a></td>
+        <td><a href="3g_kojin_sen_method.html">3 人麻雀 個人戦 重複同卓なし 卓組作成方法</a></td>
+      </tr>
+      <tr align="left">
+        <td>20</td>
+        <td>3</td>
+        <td>28</td>
+        <td></td>
+        <td><a href="3g_kojin_sen/20taku_60nin_28sen_kojin.html">20 卓 60 人 28 戦</a></td>
+        <td><a href="3g_kojin_sen_method.html">3 人麻雀 個人戦 重複同卓なし 卓組作成方法</a></td>
+      </tr>
+      <tr align="left">
+        <td>21</td>
+        <td>3</td>
+        <td>29</td>
+        <td></td>
+        <td><a href="3g_kojin_sen/21taku_63nin_29sen_kojin.html">21 卓 63 人 29 戦</a></td>
+        <td><a href="3g_kojin_sen_method.html">3 人麻雀 個人戦 重複同卓なし 卓組作成方法</a></td>
+      </tr>
+      <tr align="left">
+        <td>22</td>
+        <td>3</td>
+        <td>32</td>
+        <td>○</td>
+        <td><a href="3g_kojin_sen/22taku_66nin_32sen_kojin.html">22 卓 66 人 32 戦</a></td>
+        <td><a href="3g_kojin_sen_method.html">3 人麻雀 個人戦 重複同卓なし 卓組作成方法</a></td>
+      </tr>
+      <tr align="left">
+        <td>23</td>
+        <td>3</td>
+        <td>32</td>
+        <td></td>
+        <td><a href="3g_kojin_sen/23taku_69nin_32sen_kojin.html">23 卓 69 人 32 戦</a></td>
+        <td><a href="3g_kojin_sen_method.html">3 人麻雀 個人戦 重複同卓なし 卓組作成方法</a></td>
+      </tr>
+      <tr align="left">
+        <td>24</td>
+        <td>3</td>
+        <td>33</td>
+        <td></td>
+        <td><a href="3g_kojin_sen/24taku_72nin_33sen_kojin.html">24 卓 72 人 33 戦</a></td>
+        <td><a href="3g_kojin_sen_method.html">3 人麻雀 個人戦 重複同卓なし 卓組作成方法</a></td>
+      </tr>
+      <tr align="left">
+        <td>25</td>
+        <td>3</td>
+        <td>37</td>
+        <td>○</td>
+        <td><a href="3g_kojin_sen/25taku_75nin_37sen_kojin.html">25 卓 75 人 37 戦</a></td>
+        <td><a href="3g_kojin_sen_method.html">3 人麻雀 個人戦 重複同卓なし 卓組作成方法</a></td>
+      </tr>
+      <tr align="left">
+        <td>26</td>
+        <td>3</td>
+        <td>37</td>
+        <td></td>
+        <td><a href="3g_kojin_sen/26taku_78nin_37sen_kojin.html">26 卓 78 人 37 戦</a></td>
+        <td><a href="3g_kojin_sen_method.html">3 人麻雀 個人戦 重複同卓なし 卓組作成方法</a></td>
+      </tr>
+      <tr align="left">
+        <td>27</td>
+        <td>3</td>
+        <td>40</td>
+        <td>○</td>
+        <td><a href="3g_kojin_sen/27taku_81nin_40sen_kojin.html">27 卓 81 人 40 戦</a></td>
+        <td><a href="3g_kojin_sen_method.html">3 人麻雀 個人戦 重複同卓なし 卓組作成方法</a></td>
+      </tr>
+      <tr align="left">
+        <td>28</td>
+        <td>3</td>
+        <td>38</td>
+        <td></td>
+        <td><a href="3g_kojin_sen/28taku_84nin_38sen_kojin.html">28 卓 84 人 38 戦</a></td>
+        <td><a href="3g_kojin_sen_method.html">3 人麻雀 個人戦 重複同卓なし 卓組作成方法</a></td>
+      </tr>
+      <tr align="left">
+        <td>29</td>
+        <td>3</td>
+        <td>40</td>
+        <td></td>
+        <td><a href="3g_kojin_sen/29taku_87nin_40sen_kojin.html">29 卓 87 人 40 戦</a></td>
+        <td><a href="3g_kojin_sen_method.html">3 人麻雀 個人戦 重複同卓なし 卓組作成方法</a></td>
+      </tr>
+      <tr align="left">
+        <td>30</td>
+        <td>3</td>
+        <td>41</td>
+        <td></td>
+        <td><a href="3g_kojin_sen/30taku_90nin_41sen_kojin.html">30 卓 90 人 41 戦</a></td>
+        <td><a href="3g_kojin_sen_method.html">3 人麻雀 個人戦 重複同卓なし 卓組作成方法</a></td>
+      </tr>
+    </table>
+
+    <h2>p = 4</h2>
+
+    <table border="1" style="border-collapse: collapse">
+      <tr align="left">
+        <th>g</th>
+        <th>p</th>
+        <th>w</th>
+        <th>w最大</th>
+        <th>卓組リンク</th>
+        <th>作成方法リンク</th>
+      </tr>
+      <tr align="left">
+        <td>4</td>
+        <td>4</td>
+        <td>5</td>
+        <td>○</td>
+        <td><a href="kojin_sen/4taku_16nin_5sen_kojin.html">4 卓 16 人 5 戦</a></td>
+        <td><a href="kojin_sen_method.html">個人戦 重複同卓なし 卓組作成方法</a></td>
+      </tr>
+      <tr align="left">
+        <td>5</td>
+        <td>4</td>
+        <td>5</td>
+        <td></td>
+        <td><a href="kojin_sen/5taku_20nin_5sen_kojin.html">5 卓 20 人 5 戦</a></td>
+        <td><a href="kojin_sen_method.html">個人戦 重複同卓なし 卓組作成方法</a></td>
+      </tr>
+      <tr align="left">
+        <td>6</td>
+        <td>4</td>
+        <td>7</td>
+        <td>○</td>
+        <td><a href="kojin_sen/6taku_24nin_7sen_kojin.html">6 卓 24 人 7 戦</a></td>
+        <td><a href="kojin_sen_method.html">個人戦 重複同卓なし 卓組作成方法</a></td>
+      </tr>
+      <tr align="left">
+        <td>7</td>
+        <td>4</td>
+        <td>9</td>
+        <td>○</td>
+        <td><a href="kojin_sen/7taku_28nin_9sen_kojin.html">7 卓 28 人 9 戦</a></td>
+        <td><a href="kojin_sen_method.html">個人戦 重複同卓なし 卓組作成方法</a></td>
+      </tr>
+      <tr align="left">
+        <td>8</td>
+        <td>4</td>
+        <td>10</td>
+        <td>○</td>
+        <td><a href="kojin_sen/8taku_32nin_10sen_kojin.html">8 卓 32 人 10 戦</a></td>
+        <td><a href="kojin_sen_method.html">個人戦 重複同卓なし 卓組作成方法</a></td>
+      </tr>
+      <tr align="left">
+        <td>9</td>
+        <td>4</td>
+        <td>10</td>
+        <td></td>
+        <td><a href="kojin_sen/9taku_36nin_10sen_kojin.html">9 卓 36 人 10 戦</a></td>
+        <td><a href="kojin_sen_method.html">個人戦 重複同卓なし 卓組作成方法</a></td>
+      </tr>
+      <tr align="left">
+        <td>10</td>
+        <td>4</td>
+        <td>13</td>
+        <td>○</td>
+        <td><a href="kojin_sen/10taku_40nin_13sen_kojin.html">10 卓 40 人 13 戦</a></td>
+        <td><a href="kojin_sen_method.html">個人戦 重複同卓なし 卓組作成方法</a></td>
+      </tr>
+      <tr align="left">
+        <td>11</td>
+        <td>4</td>
+        <td>12</td>
+        <td></td>
+        <td><a href="kojin_sen/11taku_44nin_12sen_kojin.html">11 卓 44 人 12 戦</a></td>
+        <td><a href="kojin_sen_method.html">個人戦 重複同卓なし 卓組作成方法</a></td>
+      </tr>
+      <tr align="left">
+        <td>12</td>
+        <td>4</td>
+        <td>13</td>
+        <td></td>
+        <td><a href="kojin_sen/12taku_48nin_13sen_kojin.html">12 卓 48 人 13 戦</a></td>
+        <td><a href="kojin_sen_method.html">個人戦 重複同卓なし 卓組作成方法</a></td>
+      </tr>
+      <tr align="left">
+        <td>13</td>
+        <td>4</td>
+        <td>17</td>
+        <td>○</td>
+        <td><a href="kojin_sen/13taku_52nin_17sen_kojin.html">13 卓 52 人 17 戦</a></td>
+        <td><a href="kojin_sen_method.html">個人戦 重複同卓なし 卓組作成方法</a></td>
+      </tr>
+      <tr align="left">
+        <td>14</td>
+        <td>4</td>
+        <td>16</td>
+        <td></td>
+        <td><a href="kojin_sen/14taku_56nin_16sen_kojin.html">14 卓 56 人 16 戦</a></td>
+        <td><a href="kojin_sen_method.html">個人戦 重複同卓なし 卓組作成方法</a></td>
+      </tr>
+      <tr align="left">
+        <td>15</td>
+        <td>4</td>
+        <td>19</td>
+        <td>○</td>
+        <td><a href="kojin_sen/15taku_60nin_19sen_kojin.html">15 卓 60 人 19 戦</a></td>
+        <td><a href="kojin_sen_method.html">個人戦 重複同卓なし 卓組作成方法</a></td>
+      </tr>
+      <tr align="left">
+        <td>16</td>
+        <td>4</td>
+        <td>21</td>
+        <td>○</td>
+        <td><a href="kojin_sen/16taku_64nin_21sen_kojin.html">16 卓 64 人 21 戦</a></td>
+        <td><a href="kojin_sen_method.html">個人戦 重複同卓なし 卓組作成方法</a></td>
+      </tr>
+      <tr align="left">
+        <td>17</td>
+        <td>4</td>
+        <td>21</td>
+        <td></td>
+        <td><a href="kojin_sen/17taku_68nin_21sen_kojin.html">17 卓 68 人 21 戦</a></td>
+        <td><a href="kojin_sen_method.html">個人戦 重複同卓なし 卓組作成方法</a></td>
+      </tr>
+      <tr align="left">
+        <td>18</td>
+        <td>4</td>
+        <td>21</td>
+        <td></td>
+        <td><a href="kojin_sen/18taku_72nin_21sen_kojin.html">18 卓 72 人 21 戦</a></td>
+        <td><a href="kojin_sen_method.html">個人戦 重複同卓なし 卓組作成方法</a></td>
+      </tr>
+      <tr align="left">
+        <td>19</td>
+        <td>4</td>
+        <td>25</td>
+        <td>○</td>
+        <td><a href="kojin_sen/19taku_76nin_25sen_kojin.html">19 卓 76 人 25 戦</a></td>
+        <td><a href="kojin_sen_method.html">個人戦 重複同卓なし 卓組作成方法</a></td>
+      </tr>
+      <tr align="left">
+        <td>20</td>
+        <td>4</td>
+        <td>24</td>
+        <td></td>
+        <td><a href="kojin_sen/20taku_80nin_24sen_kojin.html">20 卓 80 人 24 戦</a></td>
+        <td><a href="kojin_sen_method.html">個人戦 重複同卓なし 卓組作成方法</a></td>
+      </tr>
+      <tr align="left">
+        <td>21</td>
+        <td>4</td>
+        <td>26</td>
+        <td></td>
+        <td><a href="kojin_sen/21taku_84nin_26sen_kojin.html">21 卓 84 人 26 戦</a></td>
+        <td><a href="kojin_sen_method.html">個人戦 重複同卓なし 卓組作成方法</a></td>
+      </tr>
+      <tr align="left">
+        <td>22</td>
+        <td>4</td>
+        <td>29</td>
+        <td>○</td>
+        <td><a href="kojin_sen/22taku_88nin_29sen_kojin.html">22 卓 88 人 29 戦</a></td>
+        <td><a href="kojin_sen_method.html">個人戦 重複同卓なし 卓組作成方法</a></td>
+      </tr>
+      <tr align="left">
+        <td>23</td>
+        <td>4</td>
+        <td>29</td>
+        <td></td>
+        <td><a href="kojin_sen/23taku_92nin_29sen_kojin.html">23 卓 92 人 29 戦</a></td>
+        <td><a href="kojin_sen_method.html">個人戦 重複同卓なし 卓組作成方法</a></td>
+      </tr>
+      <tr align="left">
+        <td>24</td>
+        <td>4</td>
+        <td>30</td>
+        <td></td>
+        <td><a href="kojin_sen/24taku_96nin_30sen_kojin.html">24 卓 96 人 30 戦</a></td>
+        <td><a href="kojin_sen_method.html">個人戦 重複同卓なし 卓組作成方法</a></td>
+      </tr>
+      <tr align="left">
+        <td>25</td>
+        <td>4</td>
+        <td>33</td>
+        <td>○</td>
+        <td><a href="kojin_sen/25taku_100nin_33sen_kojin.html">25 卓 100 人 33 戦</a></td>
+        <td><a href="kojin_sen_method.html">個人戦 重複同卓なし 卓組作成方法</a></td>
+      </tr>
+      <tr align="left">
+        <td>26</td>
+        <td>4</td>
+        <td>31</td>
+        <td></td>
+        <td><a href="kojin_sen/26taku_104nin_31sen_kojin.html">26 卓 104 人 31 戦</a></td>
+        <td><a href="kojin_sen_method.html">個人戦 重複同卓なし 卓組作成方法</a></td>
+      </tr>
+      <tr align="left">
+        <td>27</td>
+        <td>4</td>
+        <td>35</td>
+        <td>○</td>
+        <td><a href="kojin_sen/27taku_108nin_35sen_kojin.html">27 卓 108 人 35 戦</a></td>
+        <td><a href="kojin_sen_method.html">個人戦 重複同卓なし 卓組作成方法</a></td>
+      </tr>
+      <tr align="left">
+        <td>28</td>
+        <td>4</td>
+        <td>37</td>
+        <td>○</td>
+        <td><a href="kojin_sen/28taku_112nin_37sen_kojin.html">28 卓 112 人 37 戦</a></td>
+        <td><a href="kojin_sen_method.html">個人戦 重複同卓なし 卓組作成方法</a></td>
+      </tr>
+      <tr align="left">
+        <td>29</td>
+        <td>4</td>
+        <td>35</td>
+        <td></td>
+        <td><a href="kojin_sen/29taku_116nin_35sen_kojin.html">29 卓 116 人 35 戦</a></td>
+        <td><a href="kojin_sen_method.html">個人戦 重複同卓なし 卓組作成方法</a></td>
+      </tr>
+      <tr align="left">
+        <td>30</td>
+        <td>4</td>
+        <td>35</td>
+        <td></td>
+        <td><a href="kojin_sen/30taku_120nin_35sen_kojin.html">30 卓 120 人 35 戦</a></td>
+        <td><a href="kojin_sen_method.html">個人戦 重複同卓なし 卓組作成方法</a></td>
+      </tr>
+      <tr align="left">
+        <td>31</td>
+        <td>4</td>
+        <td>41</td>
+        <td>○</td>
+        <td><a href="kojin_sen/31taku_124nin_41sen_kojin.html">31 卓 124 人 41 戦</a></td>
+        <td><a href="kojin_sen_method.html">個人戦 重複同卓なし 卓組作成方法</a></td>
+      </tr>
+      <tr align="left">
+        <td>32</td>
+        <td>4</td>
+        <td>38</td>
+        <td></td>
+        <td><a href="kojin_sen/32taku_128nin_38sen_kojin.html">32 卓 128 人 38 戦</a></td>
+        <td><a href="kojin_sen_method.html">個人戦 重複同卓なし 卓組作成方法</a></td>
+      </tr>
+    </table>
+
+    <br />
+    <a href="index.html">トップページへ戻る</a>
+  </body>
+</html>

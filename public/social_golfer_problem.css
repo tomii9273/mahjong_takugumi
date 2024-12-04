@@ -1,0 +1,8 @@
+@charset "UTF-8";
+
+table td {
+  padding: 4px 4px; /*上下・左右の順*/
+}
+table th {
+  padding: 4px 4px; /*上下・左右の順*/
+}

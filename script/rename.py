@@ -24,7 +24,7 @@ def rewrite_line(line):
     # )  # 抜け番あり
     # match = re.match(rf'        <a href="3ma/(\d+)sou3ma\.txt">(\d+)卓(\d+)人(\d+)戦</a><br />\n', line)  # サンマ
 
-    match = re.match(r'.*(\d+)卓(\d+)人(\d+)戦.*', line)  # 半角スペース追加
+    match = re.match(r".*(\d+)卓(\d+)人(\d+)戦.*", line)
 
     if match:
         print(match.groups())
@@ -33,7 +33,7 @@ def rewrite_line(line):
         # num1, num2, num3, num4 = match.groups()  # 抜け番あり
         # assert num1 == num3 and num2 == num4  # 抜け番あり
         # num1, num2, num3, num4 = match.groups()  # サンマ
-        num1, num2, num3 = match.groups()  # 半角スペース追加
+        num1, num2, num3 = match.groups()
 
         # if int(num1) >= 14:
         #     return line
@@ -60,10 +60,10 @@ def rewrite_line(line):
         # os.rename(f"3ma/{num1}sou3ma.txt", path_after)
 
         # 半角スペース追加
-        target = f'{num1}卓{num2}人{num3}戦'
-        new_format = f'{num1} 卓 {num2} 人 {num3} 戦'
+        target = f"{num1}卓{num2}人{num3}戦"
+        new_format = f"{num1} 卓 {num2} 人 {num3} 戦"
         target_index = line.find(target)
-        new_format = line[:target_index] + new_format + line[target_index + len(target):]
+        new_format = line[:target_index] + new_format + line[target_index + len(target) :]
         # print(new_format)
 
         # sys.exit()
