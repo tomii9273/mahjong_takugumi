@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta
+      name="keyword"
+      content="mahjong, mahjongg, majiang, convention, match table, list of matches, tournament bracket, combinatorics, round robin, individual match, Social Golfer Problem, SGP, Kirkman's Schoolgirl Problem"
+    />
+    <title>Solutions of Social Golfer Problem - Match Tables For Mahjong Conventions</title>
+    <link rel="stylesheet" href="social_golfer_problem.css" type="text/css" />
+  </head>
+  <body bgcolor="#e0ffe0">
+    <h1>Solutions of Social Golfer Problem</h1>
+
+    <p>
+      Some of the match tables on this website are solutions to the
+      <a href="https://en.wikipedia.org/wiki/Social_golfer_problem">Social Golfer Problem</a> (SGP), a combinatorial design problem in discrete
+      mathematics.<br />
+      Summary of SGP: "g×p golfers play golf once a week in g groups of p golfers each. Is it possible to set up a schedule of w weeks without any two
+      golfers playing together in a group more than once?"<br />
+      The solution to the problem and the match table correspondence are summarized on this page.
+    </p>
+
+    <table border="1" style="border-collapse: collapse">
+      <tr align="left">
+        <th>variable character</th>
+        <th>name at SGP</th>
+        <th>name at mahjong match tables</th>
+      </tr>
+      <tr align="left">
+        <td>g</td>
+        <td>number of groups</td>
+        <td>number of tables (卓数)</td>
+      </tr>
+      <tr align="left">
+        <td>p</td>
+        <td>number of players (golfers) in a group</td>
+        <td>p-player mahjong (p 人麻雀)</td>
+      </tr>
+      <tr align="left">
+        <td>w</td>
+        <td>number of weeks</td>
+        <td>number of matches (対戦数, 戦数)</td>
+      </tr>
+    </table>
+
+    <p>
+      If g and p are fixed, it can be shown that the maximum value of w does not exceed (gp-1) / (p-1).<br />
+      If the maximum w is achieved in that case, a circle is placed in the w-max column.
+      <details>
+        <summary>proof</summary>
+        <p>
+          Consider the position of a certain player. The number of players he can play with in a single round is p-1.<br />
+          If players other than the player (total gp-1 players) are assigned to the same table one match at a time, the number of players will be
+          insufficient after (gp-1) / (p-1) rounds.<br />
+          Therefore, the maximum number of matches w does not exceed (gp-1) / (p-1).
+        </p>
+      </details>
+    </p>
+
+    <h2>p = 3</h2>
+
+    <table border="1" style="border-collapse: collapse">
+      <tr align="left">
+        <th>g</th>
+        <th>p</th>
+        <th>w</th>
+        <th>w-max</th>
+        <th>link to match table</th>
+        <th>link to creation method</th>
+      </tr>
+      <tr align="left">
+        <td>3</td>
+        <td>3</td>
+        <td>4</td>
+        <td>○</td>
+        <td><a href="3g_kojin_sen/3taku_9nin_4sen_kojin.html">3 table 9 players 4 matches</a></td>
+        <td><a href="3g_kojin_sen_method.html">3-player mahjong, individual match, no duplicate</a></td>
+      </tr>
+      <tr align="left">
+        <td>4</td>
+        <td>3</td>
+        <td>4</td>
+        <td></td>
+        <td><a href="3g_kojin_sen/4taku_12nin_4sen_kojin.html">4 table 12 players 4 matches</a></td>
+        <td><a href="3g_kojin_sen_method.html">3-player mahjong, individual match, no duplicate</a></td>
+      </tr>
+      <tr align="left">
+        <td>5</td>
+        <td>3</td>
+        <td>7</td>
+        <td>○</td>
+        <td><a href="3g_kojin_sen/5taku_15nin_7sen_kojin.html">5 table 15 players 7 matches</a></td>
+        <td><a href="3g_kojin_sen_method.html">3-player mahjong, individual match, no duplicate</a></td>
+      </tr>
+      <tr align="left">
+        <td>6</td>
+        <td>3</td>
+        <td>8</td>
+        <td>○</td>
+        <td><a href="3g_kojin_sen/6taku_18nin_8sen_kojin.html">6 table 18 players 8 matches</a></td>
+        <td><a href="3g_kojin_sen_method.html">3-player mahjong, individual match, no duplicate</a></td>
+      </tr>
+      <tr align="left">
+        <td>7</td>
+        <td>3</td>
+        <td>9</td>
+        <td></td>
+        <td><a href="3g_kojin_sen/7taku_21nin_9sen_kojin.html">7 table 21 players 9 matches</a></td>
+        <td><a href="3g_kojin_sen_method.html">3-player mahjong, individual match, no duplicate</a></td>
+      </tr>
+      <tr align="left">
+        <td>8</td>
+        <td>3</td>
+        <td>11</td>
+        <td>○</td>
+        <td><a href="3g_kojin_sen/8taku_24nin_11sen_kojin.html">8 table 24 players 11 matches</a></td>
+        <td><a href="3g_kojin_sen_method.html">3-player mahjong, individual match, no duplicate</a></td>
+      </tr>
+      <tr align="left">
+        <td>9</td>
+        <td>3</td>
+        <td>13</td>
+        <td>○</td>
+        <td><a href="3g_kojin_sen/9taku_27nin_13sen_kojin.html">9 table 27 players 13 matches</a></td>
+        <td><a href="3g_kojin_sen_method.html">3-player mahjong, individual match, no duplicate</a></td>
+      </tr>
+      <tr align="left">
+        <td>10</td>
+        <td>3</td>
+        <td>13</td>
+        <td></td>
+        <td><a href="3g_kojin_sen/10taku_30nin_13sen_kojin.html">10 table 30 players 13 matches</a></td>
+        <td><a href="3g_kojin_sen_method.html">3-player mahjong, individual match, no duplicate</a></td>
+      </tr>
+      <tr align="left">
+        <td>11</td>
+        <td>3</td>
+        <td>16</td>
+        <td>○</td>
+        <td><a href="3g_kojin_sen/11taku_33nin_16sen_kojin.html">11 table 33 players 16 matches</a></td>
+        <td><a href="3g_kojin_sen_method.html">3-player mahjong, individual match, no duplicate</a></td>
+      </tr>
+      <tr align="left">
+        <td>12</td>
+        <td>3</td>
+        <td>16</td>
+        <td></td>
+        <td><a href="3g_kojin_sen/12taku_36nin_16sen_kojin.html">12 table 36 players 16 matches</a></td>
+        <td><a href="3g_kojin_sen_method.html">3-player mahjong, individual match, no duplicate</a></td>
+      </tr>
+      <tr align="left">
+        <td>13</td>
+        <td>3</td>
+        <td>19</td>
+        <td>○</td>
+        <td><a href="3g_kojin_sen/13taku_39nin_19sen_kojin.html">13 table 39 players 19 matches</a></td>
+        <td><a href="3g_kojin_sen_method.html">3-player mahjong, individual match, no duplicate</a></td>
+      </tr>
+      <tr align="left">
+        <td>14</td>
+        <td>3</td>
+        <td>20</td>
+        <td>○</td>
+        <td><a href="3g_kojin_sen/14taku_42nin_20sen_kojin.html">14 table 42 players 20 matches</a></td>
+        <td><a href="3g_kojin_sen_method.html">3-player mahjong, individual match, no duplicate</a></td>
+      </tr>
+      <tr align="left">
+        <td>15</td>
+        <td>3</td>
+        <td>22</td>
+        <td>○</td>
+        <td><a href="3g_kojin_sen/15taku_45nin_22sen_kojin.html">15 table 45 players 22 matches</a></td>
+        <td><a href="3g_kojin_sen_method.html">3-player mahjong, individual match, no duplicate</a></td>
+      </tr>
+      <tr align="left">
+        <td>16</td>
+        <td>3</td>
+        <td>23</td>
+        <td>○</td>
+        <td><a href="3g_kojin_sen/16taku_48nin_23sen_kojin.html">16 table 48 players 23 matches</a></td>
+        <td><a href="3g_kojin_sen_method.html">3-player mahjong, individual match, no duplicate</a></td>
+      </tr>
+      <tr align="left">
+        <td>17</td>
+        <td>3</td>
+        <td>25</td>
+        <td>○</td>
+        <td><a href="3g_kojin_sen/17taku_51nin_25sen_kojin.html">17 table 51 players 25 matches</a></td>
+        <td><a href="3g_kojin_sen_method.html">3-player mahjong, individual match, no duplicate</a></td>
+      </tr>
+      <tr align="left">
+        <td>18</td>
+        <td>3</td>
+        <td>25</td>
+        <td></td>
+        <td><a href="3g_kojin_sen/18taku_54nin_25sen_kojin.html">18 table 54 players 25 matches</a></td>
+        <td><a href="3g_kojin_sen_method.html">3-player mahjong, individual match, no duplicate</a></td>
+      </tr>
+      <tr align="left">
+        <td>19</td>
+        <td>3</td>
+        <td>28</td>
+        <td>○</td>
+        <td><a href="3g_kojin_sen/19taku_57nin_28sen_kojin.html">19 table 57 players 28 matches</a></td>
+        <td><a href="3g_kojin_sen_method.html">3-player mahjong, individual match, no duplicate</a></td>
+      </tr>
+      <tr align="left">
+        <td>20</td>
+        <td>3</td>
+        <td>28</td>
+        <td></td>
+        <td><a href="3g_kojin_sen/20taku_60nin_28sen_kojin.html">20 table 60 players 28 matches</a></td>
+        <td><a href="3g_kojin_sen_method.html">3-player mahjong, individual match, no duplicate</a></td>
+      </tr>
+      <tr align="left">
+        <td>21</td>
+        <td>3</td>
+        <td>29</td>
+        <td></td>
+        <td><a href="3g_kojin_sen/21taku_63nin_29sen_kojin.html">21 table 63 players 29 matches</a></td>
+        <td><a href="3g_kojin_sen_method.html">3-player mahjong, individual match, no duplicate</a></td>
+      </tr>
+      <tr align="left">
+        <td>22</td>
+        <td>3</td>
+        <td>32</td>
+        <td>○</td>
+        <td><a href="3g_kojin_sen/22taku_66nin_32sen_kojin.html">22 table 66 players 32 matches</a></td>
+        <td><a href="3g_kojin_sen_method.html">3-player mahjong, individual match, no duplicate</a></td>
+      </tr>
+      <tr align="left">
+        <td>23</td>
+        <td>3</td>
+        <td>32</td>
+        <td></td>
+        <td><a href="3g_kojin_sen/23taku_69nin_32sen_kojin.html">23 table 69 players 32 matches</a></td>
+        <td><a href="3g_kojin_sen_method.html">3-player mahjong, individual match, no duplicate</a></td>
+      </tr>
+      <tr align="left">
+        <td>24</td>
+        <td>3</td>
+        <td>33</td>
+        <td></td>
+        <td><a href="3g_kojin_sen/24taku_72nin_33sen_kojin.html">24 table 72 players 33 matches</a></td>
+        <td><a href="3g_kojin_sen_method.html">3-player mahjong, individual match, no duplicate</a></td>
+      </tr>
+      <tr align="left">
+        <td>25</td>
+        <td>3</td>
+        <td>37</td>
+        <td>○</td>
+        <td><a href="3g_kojin_sen/25taku_75nin_37sen_kojin.html">25 table 75 players 37 matches</a></td>
+        <td><a href="3g_kojin_sen_method.html">3-player mahjong, individual match, no duplicate</a></td>
+      </tr>
+      <tr align="left">
+        <td>26</td>
+        <td>3</td>
+        <td>37</td>
+        <td></td>
+        <td><a href="3g_kojin_sen/26taku_78nin_37sen_kojin.html">26 table 78 players 37 matches</a></td>
+        <td><a href="3g_kojin_sen_method.html">3-player mahjong, individual match, no duplicate</a></td>
+      </tr>
+      <tr align="left">
+        <td>27</td>
+        <td>3</td>
+        <td>40</td>
+        <td>○</td>
+        <td><a href="3g_kojin_sen/27taku_81nin_40sen_kojin.html">27 table 81 players 40 matches</a></td>
+        <td><a href="3g_kojin_sen_method.html">3-player mahjong, individual match, no duplicate</a></td>
+      </tr>
+      <tr align="left">
+        <td>28</td>
+        <td>3</td>
+        <td>38</td>
+        <td></td>
+        <td><a href="3g_kojin_sen/28taku_84nin_38sen_kojin.html">28 table 84 players 38 matches</a></td>
+        <td><a href="3g_kojin_sen_method.html">3-player mahjong, individual match, no duplicate</a></td>
+      </tr>
+      <tr align="left">
+        <td>29</td>
+        <td>3</td>
+        <td>40</td>
+        <td></td>
+        <td><a href="3g_kojin_sen/29taku_87nin_40sen_kojin.html">29 table 87 players 40 matches</a></td>
+        <td><a href="3g_kojin_sen_method.html">3-player mahjong, individual match, no duplicate</a></td>
+      </tr>
+      <tr align="left">
+        <td>30</td>
+        <td>3</td>
+        <td>41</td>
+        <td></td>
+        <td><a href="3g_kojin_sen/30taku_90nin_41sen_kojin.html">30 table 90 players 41 matches</a></td>
+        <td><a href="3g_kojin_sen_method.html">3-player mahjong, individual match, no duplicate</a></td>
+      </tr>
+    </table>
+
+    <h2>p = 4</h2>
+
+    <table border="1" style="border-collapse: collapse">
+      <tr align="left">
+        <th>g</th>
+        <th>p</th>
+        <th>w</th>
+        <th>w最大</th>
+        <th>卓組リンク</th>
+        <th>作成方法リンク</th>
+      </tr>
+      <tr align="left">
+        <td>4</td>
+        <td>4</td>
+        <td>5</td>
+        <td>○</td>
+        <td><a href="kojin_sen/4taku_16nin_5sen_kojin.html">4 table 16 players 5 matches</a></td>
+        <td><a href="kojin_sen_method.html">4-player mahjong, individual match, no duplicate</a></td>
+      </tr>
+      <tr align="left">
+        <td>5</td>
+        <td>4</td>
+        <td>5</td>
+        <td></td>
+        <td><a href="kojin_sen/5taku_20nin_5sen_kojin.html">5 table 20 players 5 matches</a></td>
+        <td><a href="kojin_sen_method.html">4-player mahjong, individual match, no duplicate</a></td>
+      </tr>
+      <tr align="left">
+        <td>6</td>
+        <td>4</td>
+        <td>7</td>
+        <td>○</td>
+        <td><a href="kojin_sen/6taku_24nin_7sen_kojin.html">6 table 24 players 7 matches</a></td>
+        <td><a href="kojin_sen_method.html">4-player mahjong, individual match, no duplicate</a></td>
+      </tr>
+      <tr align="left">
+        <td>7</td>
+        <td>4</td>
+        <td>9</td>
+        <td>○</td>
+        <td><a href="kojin_sen/7taku_28nin_9sen_kojin.html">7 table 28 players 9 matches</a></td>
+        <td><a href="kojin_sen_method.html">4-player mahjong, individual match, no duplicate</a></td>
+      </tr>
+      <tr align="left">
+        <td>8</td>
+        <td>4</td>
+        <td>10</td>
+        <td>○</td>
+        <td><a href="kojin_sen/8taku_32nin_10sen_kojin.html">8 table 32 players 10 matches</a></td>
+        <td><a href="kojin_sen_method.html">4-player mahjong, individual match, no duplicate</a></td>
+      </tr>
+      <tr align="left">
+        <td>9</td>
+        <td>4</td>
+        <td>10</td>
+        <td></td>
+        <td><a href="kojin_sen/9taku_36nin_10sen_kojin.html">9 table 36 players 10 matches</a></td>
+        <td><a href="kojin_sen_method.html">4-player mahjong, individual match, no duplicate</a></td>
+      </tr>
+      <tr align="left">
+        <td>10</td>
+        <td>4</td>
+        <td>13</td>
+        <td>○</td>
+        <td><a href="kojin_sen/10taku_40nin_13sen_kojin.html">10 table 40 players 13 matches</a></td>
+        <td><a href="kojin_sen_method.html">4-player mahjong, individual match, no duplicate</a></td>
+      </tr>
+      <tr align="left">
+        <td>11</td>
+        <td>4</td>
+        <td>12</td>
+        <td></td>
+        <td><a href="kojin_sen/11taku_44nin_12sen_kojin.html">11 table 44 players 12 matches</a></td>
+        <td><a href="kojin_sen_method.html">4-player mahjong, individual match, no duplicate</a></td>
+      </tr>
+      <tr align="left">
+        <td>12</td>
+        <td>4</td>
+        <td>13</td>
+        <td></td>
+        <td><a href="kojin_sen/12taku_48nin_13sen_kojin.html">12 table 48 players 13 matches</a></td>
+        <td><a href="kojin_sen_method.html">4-player mahjong, individual match, no duplicate</a></td>
+      </tr>
+      <tr align="left">
+        <td>13</td>
+        <td>4</td>
+        <td>17</td>
+        <td>○</td>
+        <td><a href="kojin_sen/13taku_52nin_17sen_kojin.html">13 table 52 players 17 matches</a></td>
+        <td><a href="kojin_sen_method.html">4-player mahjong, individual match, no duplicate</a></td>
+      </tr>
+      <tr align="left">
+        <td>14</td>
+        <td>4</td>
+        <td>16</td>
+        <td></td>
+        <td><a href="kojin_sen/14taku_56nin_16sen_kojin.html">14 table 56 players 16 matches</a></td>
+        <td><a href="kojin_sen_method.html">4-player mahjong, individual match, no duplicate</a></td>
+      </tr>
+      <tr align="left">
+        <td>15</td>
+        <td>4</td>
+        <td>19</td>
+        <td>○</td>
+        <td><a href="kojin_sen/15taku_60nin_19sen_kojin.html">15 table 60 players 19 matches</a></td>
+        <td><a href="kojin_sen_method.html">4-player mahjong, individual match, no duplicate</a></td>
+      </tr>
+      <tr align="left">
+        <td>16</td>
+        <td>4</td>
+        <td>21</td>
+        <td>○</td>
+        <td><a href="kojin_sen/16taku_64nin_21sen_kojin.html">16 table 64 players 21 matches</a></td>
+        <td><a href="kojin_sen_method.html">4-player mahjong, individual match, no duplicate</a></td>
+      </tr>
+      <tr align="left">
+        <td>17</td>
+        <td>4</td>
+        <td>21</td>
+        <td></td>
+        <td><a href="kojin_sen/17taku_68nin_21sen_kojin.html">17 table 68 players 21 matches</a></td>
+        <td><a href="kojin_sen_method.html">4-player mahjong, individual match, no duplicate</a></td>
+      </tr>
+      <tr align="left">
+        <td>18</td>
+        <td>4</td>
+        <td>21</td>
+        <td></td>
+        <td><a href="kojin_sen/18taku_72nin_21sen_kojin.html">18 table 72 players 21 matches</a></td>
+        <td><a href="kojin_sen_method.html">4-player mahjong, individual match, no duplicate</a></td>
+      </tr>
+      <tr align="left">
+        <td>19</td>
+        <td>4</td>
+        <td>25</td>
+        <td>○</td>
+        <td><a href="kojin_sen/19taku_76nin_25sen_kojin.html">19 table 76 players 25 matches</a></td>
+        <td><a href="kojin_sen_method.html">4-player mahjong, individual match, no duplicate</a></td>
+      </tr>
+      <tr align="left">
+        <td>20</td>
+        <td>4</td>
+        <td>24</td>
+        <td></td>
+        <td><a href="kojin_sen/20taku_80nin_24sen_kojin.html">20 table 80 players 24 matches</a></td>
+        <td><a href="kojin_sen_method.html">4-player mahjong, individual match, no duplicate</a></td>
+      </tr>
+      <tr align="left">
+        <td>21</td>
+        <td>4</td>
+        <td>26</td>
+        <td></td>
+        <td><a href="kojin_sen/21taku_84nin_26sen_kojin.html">21 table 84 players 26 matches</a></td>
+        <td><a href="kojin_sen_method.html">4-player mahjong, individual match, no duplicate</a></td>
+      </tr>
+      <tr align="left">
+        <td>22</td>
+        <td>4</td>
+        <td>29</td>
+        <td>○</td>
+        <td><a href="kojin_sen/22taku_88nin_29sen_kojin.html">22 table 88 players 29 matches</a></td>
+        <td><a href="kojin_sen_method.html">4-player mahjong, individual match, no duplicate</a></td>
+      </tr>
+      <tr align="left">
+        <td>23</td>
+        <td>4</td>
+        <td>29</td>
+        <td></td>
+        <td><a href="kojin_sen/23taku_92nin_29sen_kojin.html">23 table 92 players 29 matches</a></td>
+        <td><a href="kojin_sen_method.html">4-player mahjong, individual match, no duplicate</a></td>
+      </tr>
+      <tr align="left">
+        <td>24</td>
+        <td>4</td>
+        <td>30</td>
+        <td></td>
+        <td><a href="kojin_sen/24taku_96nin_30sen_kojin.html">24 table 96 players 30 matches</a></td>
+        <td><a href="kojin_sen_method.html">4-player mahjong, individual match, no duplicate</a></td>
+      </tr>
+      <tr align="left">
+        <td>25</td>
+        <td>4</td>
+        <td>33</td>
+        <td>○</td>
+        <td><a href="kojin_sen/25taku_100nin_33sen_kojin.html">25 table 100 players 33 matches</a></td>
+        <td><a href="kojin_sen_method.html">4-player mahjong, individual match, no duplicate</a></td>
+      </tr>
+      <tr align="left">
+        <td>26</td>
+        <td>4</td>
+        <td>31</td>
+        <td></td>
+        <td><a href="kojin_sen/26taku_104nin_31sen_kojin.html">26 table 104 players 31 matches</a></td>
+        <td><a href="kojin_sen_method.html">4-player mahjong, individual match, no duplicate</a></td>
+      </tr>
+      <tr align="left">
+        <td>27</td>
+        <td>4</td>
+        <td>35</td>
+        <td>○</td>
+        <td><a href="kojin_sen/27taku_108nin_35sen_kojin.html">27 table 108 players 35 matches</a></td>
+        <td><a href="kojin_sen_method.html">4-player mahjong, individual match, no duplicate</a></td>
+      </tr>
+      <tr align="left">
+        <td>28</td>
+        <td>4</td>
+        <td>37</td>
+        <td>○</td>
+        <td><a href="kojin_sen/28taku_112nin_37sen_kojin.html">28 table 112 players 37 matches</a></td>
+        <td><a href="kojin_sen_method.html">4-player mahjong, individual match, no duplicate</a></td>
+      </tr>
+      <tr align="left">
+        <td>29</td>
+        <td>4</td>
+        <td>35</td>
+        <td></td>
+        <td><a href="kojin_sen/29taku_116nin_35sen_kojin.html">29 table 116 players 35 matches</a></td>
+        <td><a href="kojin_sen_method.html">4-player mahjong, individual match, no duplicate</a></td>
+      </tr>
+      <tr align="left">
+        <td>30</td>
+        <td>4</td>
+        <td>35</td>
+        <td></td>
+        <td><a href="kojin_sen/30taku_120nin_35sen_kojin.html">30 table 120 players 35 matches</a></td>
+        <td><a href="kojin_sen_method.html">4-player mahjong, individual match, no duplicate</a></td>
+      </tr>
+      <tr align="left">
+        <td>31</td>
+        <td>4</td>
+        <td>41</td>
+        <td>○</td>
+        <td><a href="kojin_sen/31taku_124nin_41sen_kojin.html">31 table 124 players 41 matches</a></td>
+        <td><a href="kojin_sen_method.html">4-player mahjong, individual match, no duplicate</a></td>
+      </tr>
+      <tr align="left">
+        <td>32</td>
+        <td>4</td>
+        <td>38</td>
+        <td></td>
+        <td><a href="kojin_sen/32taku_128nin_38sen_kojin.html">32 table 128 players 38 matches</a></td>
+        <td><a href="kojin_sen_method.html">4-player mahjong, individual match, no duplicate</a></td>
+      </tr>
+    </table>
+
+    <br />
+    <a href="index.html">Return</a>
+  </body>
+</html>
