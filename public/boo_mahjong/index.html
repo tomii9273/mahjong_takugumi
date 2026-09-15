@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ブー麻雀</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7223833457018836"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div id="game-container">
+      <div id="table-area">
+        <div id="player-top" class="player-area"></div>
+        <div id="player-right" class="player-area"></div>
+        <div id="player-bottom" class="player-area"></div>
+        <div id="player-left" class="player-area"></div>
+        <div id="river-0" class="river-area"></div>
+        <div id="river-1" class="river-area"></div>
+        <div id="river-2" class="river-area"></div>
+        <div id="river-3" class="river-area"></div>
+        <div id="center-area">
+          <div id="round-info" class="center-round-info"></div>
+          <div id="player-info-2" class="player-info-center"></div>
+          <div id="center-middle-row">
+            <div id="player-info-3" class="player-info-center"></div>
+            <div id="dora-area"></div>
+            <div id="player-info-1" class="player-info-center"></div>
+          </div>
+          <div id="player-info-0" class="player-info-center"></div>
+        </div>
+        <div id="action-area"></div>
+        <div id="result-overlay" class="hidden"></div>
+        <button id="score-peek-btn" class="hidden">点数を見る</button>
+      </div>
+    </div>
+    <div id="settings-bar">
+      <label for="ai-speed">COM速度:</label>
+      <select id="ai-speed">
+        <option value="800">遅い</option>
+        <option value="300">普通</option>
+        <option value="100">速い</option>
+        <option value="0" selected>最速</option>
+      </select>
+      <button id="debug-yakuman">四暗刻[debug]</button>
+    </div>
+    <div id="debug-panel">
+      <div class="debug-row">
+        <span>持ち点:</span>
+        <label>あなた <input id="debug-points-0" type="number" value="2000" /></label>
+        <label>COM1 <input id="debug-points-1" type="number" value="2000" /></label>
+        <label>COM2 <input id="debug-points-2" type="number" value="2000" /></label>
+        <label>COM3 <input id="debug-points-3" type="number" value="2000" /></label>
+      </div>
+      <div class="debug-row">
+        <label
+          >場風:
+          <select id="debug-round-wind">
+            <option value="east">東</option>
+            <option value="south">南</option>
+            <option value="west">西</option>
+            <option value="north">北</option>
+          </select>
+        </label>
+        <label
+          >局 (親席):
+          <select id="debug-dealer">
+            <option value="0">1局 (東)</option>
+            <option value="1">2局 (南)</option>
+            <option value="2">3局 (西)</option>
+            <option value="3">4局 (北)</option>
+          </select>
+        </label>
+        <label>本場: <input id="debug-honba" type="number" value="0" min="0" /></label>
+        <button id="debug-apply">適用</button>
+      </div>
+    </div>
+
+    <div id="rules-section">
+      <h2>このアプリのルール</h2>
+      <p>以下の3つのサイトを参考にしています。矛盾する場合は上を優先します。</p>
+      <ol class="rules-sources">
+        <li>
+          <a href="https://ja.wikipedia.org/wiki/%E3%83%96%E3%83%BC%E9%BA%BB%E9%9B%80" target="_blank">Wikipedia「ブー麻雀」</a>
+        </li>
+        <li>
+          <a href="https://suzume.hakata21.com/5zats/rulebman.html" target="_blank">雀荘・麻雀打ちの頁「ブー麻雀の規則」</a>
+        </li>
+        <li>
+          <a href="https://dic.nicovideo.jp/a/%E3%83%96%E3%83%BC%E9%BA%BB%E9%9B%80" target="_blank">ニコニコ大百科「ブー麻雀」</a>
+        </li>
+      </ol>
+
+      <h3>基本ルール (このアプリでの採用値)</h3>
+      <table class="rules-table">
+        <tr>
+          <th>項目</th>
+          <th>このアプリの扱い</th>
+        </tr>
+        <tr>
+          <td>初期持ち点</td>
+          <td>2,000点</td>
+        </tr>
+        <tr>
+          <td>ブー (勝利条件)</td>
+          <td>4,000点以上でブー達成</td>
+        </tr>
+        <tr>
+          <td>ドボン (敗北条件)</td>
+          <td>0点以下でドボン</td>
+        </tr>
+        <tr>
+          <td>点数計算</td>
+          <td>符 × 2^(翻+2) (切り上げなし)。役なしアガリ可 (ドラ無効)</td>
+        </tr>
+        <tr>
+          <td>ドラ</td>
+          <td>1枚につき100点加算 (翻として計算しない)</td>
+        </tr>
+        <tr>
+          <td>門前点</td>
+          <td>門前 (副露なし) なら +300点</td>
+        </tr>
+        <tr>
+          <td>本場</td>
+          <td>1本場につき +300点</td>
+        </tr>
+        <tr>
+          <td>満貫</td>
+          <td>子 2,000点・親 3,000点で打ち切り</td>
+        </tr>
+        <tr>
+          <td>リーチ</td>
+          <td>あり。一発・裏ドラ・カンドラなし。フリテンリーチ禁止</td>
+        </tr>
+        <tr>
+          <td>ピンフとツモ</td>
+          <td>複合しない</td>
+        </tr>
+        <tr>
+          <td>喰いピンフ</td>
+          <td>あり (副露してもピンフの形なら役が付く)</td>
+        </tr>
+        <tr>
+          <td>自殺アガリ</td>
+          <td>禁止 (自分が浮かないのに他人をドボンさせるアガリ)</td>
+        </tr>
+        <tr>
+          <td>精算</td>
+          <td>マルA (1人浮き) / マルB (2人浮き) / マルC (1人沈み)</td>
+        </tr>
+        <tr>
+          <td>役満</td>
+          <td>アガリ即ゲーム終了。役満者をAトップとして精算</td>
+        </tr>
+      </table>
+
+      <h3>サイト間の相違点・不明点</h3>
+      <p class="rules-note">以下の項目はサイトによって記述が異なります。このアプリでは優先順位の高いサイトの記述を採用しています。</p>
+      <table class="rules-table">
+        <tr>
+          <th>項目</th>
+          <th>Wikipedia</th>
+          <th>雀荘・麻雀打ちの頁</th>
+          <th>ニコニコ大百科</th>
+          <th>このアプリ</th>
+        </tr>
+        <tr>
+          <td>初期持ち点</td>
+          <td>明記なし</td>
+          <td>2,000点</td>
+          <td>地域差あり (6,000点の例も)</td>
+          <td class="app-rule">2,000点</td>
+        </tr>
+        <tr>
+          <td>ドラの点数</td>
+          <td>明記なし</td>
+          <td>1枚100点</td>
+          <td>地域・雀荘により異なる</td>
+          <td class="app-rule">1枚100点 (suzume §7準拠)</td>
+        </tr>
+        <tr>
+          <td>フリテンリーチ</td>
+          <td>禁止</td>
+          <td>同巡内なら成立 (禁止でない)</td>
+          <td>記載なし</td>
+          <td class="app-rule">禁止 (Wikipedia 優先)</td>
+        </tr>
+        <tr>
+          <td>マルCトップ</td>
+          <td>禁止の店あり</td>
+          <td>可能</td>
+          <td>記載なし</td>
+          <td class="app-rule">可能</td>
+        </tr>
+        <tr>
+          <td>ダブ権</td>
+          <td>記載なし</td>
+          <td>記載なし</td>
+          <td>あり (連勝で馬が倍)</td>
+          <td class="app-rule">未実装</td>
+        </tr>
+        <tr>
+          <td>リーチ棒の費用</td>
+          <td>記載なし</td>
+          <td>無料または100点</td>
+          <td>記載なし</td>
+          <td class="app-rule">無料</td>
+        </tr>
+        <tr>
+          <td>ツモの支払い方式</td>
+          <td>記載なし</td>
+          <td>詳細なし</td>
+          <td>記載なし</td>
+          <td class="app-rule">3人で均等割 (通常麻雀準拠)</td>
+        </tr>
+        <tr>
+          <td>喰い下がり</td>
+          <td>明記なし</td>
+          <td>概念なし (喰い下がりしない)</td>
+          <td>記載なし</td>
+          <td class="app-rule">喰い下がりあり (通常麻雀準拠)</td>
+        </tr>
+        <tr>
+          <td>役満の扱い</td>
+          <td>役満は別扱い (マルAに関係なく精算)</td>
+          <td>記載なし</td>
+          <td>記載なし</td>
+          <td class="app-rule">アガリ即ゲーム終了・Aトップ精算 (Wikipedia準拠)</td>
+        </tr>
+      </table>
+      <h3>採用している役一覧</h3>
+      <p class="rules-note">このアプリで有効な役の一覧です。記載のない役は採用していません。</p>
+      <table class="rules-table">
+        <tr>
+          <th>役名</th>
+          <th>翻数</th>
+          <th>備考</th>
+        </tr>
+        <tr>
+          <td>リーチ</td>
+          <td>1翻</td>
+          <td>門前のみ</td>
+        </tr>
+        <tr>
+          <td>門前清自摸</td>
+          <td>1翻</td>
+          <td>ピンフと複合しない</td>
+        </tr>
+        <tr>
+          <td>平和 (ピンフ)</td>
+          <td>1翻</td>
+          <td>喰いピンフあり・ツモ不可</td>
+        </tr>
+        <tr>
+          <td>断么九 (タンヤオ)</td>
+          <td>1翻</td>
+          <td>副露可</td>
+        </tr>
+        <tr>
+          <td>役牌 (白・發・中・場風・自風)</td>
+          <td>各1翻</td>
+          <td>副露可</td>
+        </tr>
+        <tr>
+          <td>海底自摸</td>
+          <td>1翻</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>嶺上開花</td>
+          <td>1翻</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>搶槓</td>
+          <td>1翻</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>一気通貫</td>
+          <td>2翻</td>
+          <td>喰い下がりなし</td>
+        </tr>
+        <tr>
+          <td>チャンタ</td>
+          <td>2翻</td>
+          <td>純チャン・混チャン区別なし、喰い下がりなし</td>
+        </tr>
+        <tr>
+          <td>三暗刻</td>
+          <td>2翻</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>対々和</td>
+          <td>2翻</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>混一色</td>
+          <td>2翻</td>
+          <td>喰い下がりなし</td>
+        </tr>
+        <tr>
+          <td>小三元</td>
+          <td>2翻</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>清一色</td>
+          <td>満貫固定</td>
+          <td>喰い下がりなし</td>
+        </tr>
+        <tr>
+          <td>天和</td>
+          <td>役満</td>
+          <td>親の第一ツモ</td>
+        </tr>
+        <tr>
+          <td>地和</td>
+          <td>役満</td>
+          <td>子の第一ツモ (副露前)</td>
+        </tr>
+        <tr>
+          <td>国士無双</td>
+          <td>役満</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>四暗刻</td>
+          <td>役満</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>大三元</td>
+          <td>役満</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>四喜和 (大・小)</td>
+          <td>役満</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>字一色</td>
+          <td>役満</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>清老頭</td>
+          <td>役満</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>九蓮宝燈</td>
+          <td>役満</td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+
+    <script src="dist/bundle.js"></script>
+  </body>
+</html>
